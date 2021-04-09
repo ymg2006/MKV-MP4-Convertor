@@ -1,5 +1,8 @@
 # MKV-MP4-Convertor
-Lossless -- Multithreaded -- Hardware accelerated -- MKV to MP4 -- MP4 to MKV -- MP4 and MKV to MP3
+Lossless -- Multithreaded -- Hardware accelerated -- MKV to MP4 -- MP4 to MKV -- MP4 and MKV to MP3 -- Drag n Drop
+
+Todo:
+Changing the audio and video codecs ability
 
 <p align="center">
   <img src="screenshots/Screenshot 2021-04-09 210407.png" width="500" title="ScreenShot">
