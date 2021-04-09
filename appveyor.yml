@@ -11,6 +11,7 @@ after_build:
 artifacts:
 - path: MKV-MP4-Convertor.zip
   name: MKV-MP4-Convertor
+  type: zip
 
 deploy:
   release: MKV-MP4-Convertor-v$(APPVEYOR_BUILD_VERSION)
@@ -23,3 +24,4 @@ deploy:
   prerelease: false
   on:
     branch: master
+    APPVEYOR_REPO_TAG: false
