@@ -12,7 +12,7 @@ artifacts:
 - path: MKV-MP4-Convertor.zip
   name: MKV-MP4-Convertor
 
-  deploy:
+deploy:
   release: MKV-MP4-Convertor-v$(APPVEYOR_BUILD_VERSION)
   description: 'Release description'
   provider: GitHub
