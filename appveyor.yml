@@ -1,0 +1,25 @@
+version: 1.0.{build}
+image: Visual Studio 2019
+configuration: Release
+platform: x64
+before_build:
+- cmd: nuget restore
+build:
+  verbosity: minimal
+after_build:
+- cmd: 7z a -r MKV-MP4-Convertor.zip "%APPVEYOR_BUILD_FOLDER%\MKV-MP4 Convertor\bin\x64\Release\*.*"
+artifacts:
+- path: MKV-MP4-Convertor.zip
+  name: MKV-MP4-Convertor
+
+  deploy:
+  release: MKV-MP4-Convertor-v$(APPVEYOR_BUILD_VERSION)
+  description: 'Release description'
+  provider: GitHub
+  auth_token:
+    secure: mrchthX5222OisS9nHqIqncf8OfDaPwqMS/SG5hhXaFodzF4UUmjOCZG7DJBPa8r
+  artifact: /.*\.zip/
+  draft: false
+  prerelease: false
+  on:
+    branch: master
