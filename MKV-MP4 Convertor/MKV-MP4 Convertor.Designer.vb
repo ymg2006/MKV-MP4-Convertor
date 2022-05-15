@@ -1,6 +1,7 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
+<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Form1
-    Inherits System.Windows.Forms.Form
+
+    Inherits Telerik.WinControls.UI.RadForm
 
     'Form overrides dispose to clean up the component list.
     <System.Diagnostics.DebuggerNonUserCode()>
@@ -22,35 +23,51 @@ Partial Class Form1
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim GridViewTextBoxColumn1 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn2 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn3 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn4 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim TableViewDefinition1 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
+        Dim RadListDataItem1 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem2 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem3 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem4 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem5 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem6 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem7 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim GridViewTextBoxColumn5 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim TableViewDefinition2 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
         Me.ofdAdd = New System.Windows.Forms.OpenFileDialog()
-        Me.btnBrowseAdd = New System.Windows.Forms.Button()
-        Me.btnConvert = New System.Windows.Forms.Button()
-        Me.FileInfo = New System.Windows.Forms.DataGridView()
-        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.btnConvertAll = New System.Windows.Forms.Button()
+        Me.btnBrowseAdd = New Telerik.WinControls.UI.RadButton()
+        Me.btnConvert = New Telerik.WinControls.UI.RadButton()
+        Me.FileInfo = New Telerik.WinControls.UI.RadGridView()
+        Me.btnConvertAll = New Telerik.WinControls.UI.RadButton()
         Me.BWMain = New System.ComponentModel.BackgroundWorker()
-        Me.chkRemoveSrc = New System.Windows.Forms.CheckBox()
-        Me.chkLog = New System.Windows.Forms.CheckBox()
-        Me.chkAudioOnly = New System.Windows.Forms.CheckBox()
-        Me.cmbQuality = New System.Windows.Forms.ComboBox()
-        Me.cmbGPU = New System.Windows.Forms.ComboBox()
-        Me.ItemsList = New System.Windows.Forms.DataGridView()
-        Me.Address = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.chkSubtitle = New System.Windows.Forms.CheckBox()
-        Me.chkKeepType = New System.Windows.Forms.CheckBox()
+        Me.chkRemoveSrc = New Telerik.WinControls.UI.RadCheckBox()
+        Me.chkLog = New Telerik.WinControls.UI.RadCheckBox()
+        Me.chkAudioOnly = New Telerik.WinControls.UI.RadCheckBox()
+        Me.cmbQuality = New Telerik.WinControls.UI.RadDropDownList()
+        Me.cmbGPU = New Telerik.WinControls.UI.RadDropDownList()
+        Me.ItemsList = New Telerik.WinControls.UI.RadGridView()
+        Me.chkSubtitle = New Telerik.WinControls.UI.RadCheckBox()
+        Me.chkKeepType = New Telerik.WinControls.UI.RadCheckBox()
+        Me.FluentDarkTheme = New Telerik.WinControls.Themes.FluentDarkTheme()
+        Me.FluentTheme = New Telerik.WinControls.Themes.FluentTheme()
+        CType(Me.btnBrowseAdd, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btnConvert, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.FileInfo, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.FileInfo.MasterTemplate, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btnConvertAll, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.chkRemoveSrc, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.chkLog, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.chkAudioOnly, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.cmbQuality, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.cmbGPU, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ItemsList, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ItemsList.MasterTemplate, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.chkSubtitle, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.chkKeepType, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'ofdAdd
@@ -61,120 +78,68 @@ Partial Class Form1
         '
         Me.btnBrowseAdd.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.btnBrowseAdd.Location = New System.Drawing.Point(15, 260)
-        Me.btnBrowseAdd.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnBrowseAdd.Margin = New System.Windows.Forms.Padding(4)
         Me.btnBrowseAdd.Name = "btnBrowseAdd"
         Me.btnBrowseAdd.Size = New System.Drawing.Size(138, 38)
         Me.btnBrowseAdd.TabIndex = 1
         Me.btnBrowseAdd.Text = "Browse/Add"
-        Me.btnBrowseAdd.UseVisualStyleBackColor = True
         '
         'btnConvert
         '
         Me.btnConvert.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.btnConvert.Location = New System.Drawing.Point(160, 260)
-        Me.btnConvert.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnConvert.Margin = New System.Windows.Forms.Padding(4)
         Me.btnConvert.Name = "btnConvert"
         Me.btnConvert.Size = New System.Drawing.Size(138, 38)
         Me.btnConvert.TabIndex = 4
         Me.btnConvert.Text = "Convert"
-        Me.btnConvert.UseVisualStyleBackColor = True
         '
         'FileInfo
         '
-        Me.FileInfo.AllowUserToAddRows = False
-        Me.FileInfo.AllowUserToDeleteRows = False
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.FileInfo.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.FileInfo.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.FileInfo.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(178, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.FileInfo.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
-        Me.FileInfo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.FileInfo.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3, Me.Column4})
-        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(178, Byte))
-        DataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.FileInfo.DefaultCellStyle = DataGridViewCellStyle7
         Me.FileInfo.Location = New System.Drawing.Point(15, 305)
-        Me.FileInfo.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.FileInfo.Margin = New System.Windows.Forms.Padding(4)
+        '
+        '
+        '
+        Me.FileInfo.MasterTemplate.AllowAddNewRow = False
+        Me.FileInfo.MasterTemplate.AllowDeleteRow = False
+        GridViewTextBoxColumn1.HeaderText = "ID"
+        GridViewTextBoxColumn1.MinWidth = 6
+        GridViewTextBoxColumn1.Name = "Column1"
+        GridViewTextBoxColumn1.ReadOnly = True
+        GridViewTextBoxColumn2.HeaderText = "Track type"
+        GridViewTextBoxColumn2.MinWidth = 6
+        GridViewTextBoxColumn2.Name = "Column2"
+        GridViewTextBoxColumn2.ReadOnly = True
+        GridViewTextBoxColumn3.HeaderText = "Quality"
+        GridViewTextBoxColumn3.MinWidth = 6
+        GridViewTextBoxColumn3.Name = "Column3"
+        GridViewTextBoxColumn3.ReadOnly = True
+        GridViewTextBoxColumn4.HeaderText = "Codec ID"
+        GridViewTextBoxColumn4.MinWidth = 6
+        GridViewTextBoxColumn4.Name = "Column4"
+        GridViewTextBoxColumn4.ReadOnly = True
+        Me.FileInfo.MasterTemplate.Columns.AddRange(New Telerik.WinControls.UI.GridViewDataColumn() {GridViewTextBoxColumn1, GridViewTextBoxColumn2, GridViewTextBoxColumn3, GridViewTextBoxColumn4})
+        Me.FileInfo.MasterTemplate.ShowRowHeaderColumn = False
+        Me.FileInfo.MasterTemplate.ViewDefinition = TableViewDefinition1
         Me.FileInfo.Name = "FileInfo"
         Me.FileInfo.ReadOnly = True
-        Me.FileInfo.RowHeadersVisible = False
-        Me.FileInfo.RowHeadersWidth = 51
-        Me.FileInfo.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.FileInfo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.FileInfo.Size = New System.Drawing.Size(572, 144)
         Me.FileInfo.TabIndex = 5
-        '
-        'Column1
-        '
-        Me.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.Column1.DefaultCellStyle = DataGridViewCellStyle3
-        Me.Column1.FillWeight = 50.0!
-        Me.Column1.HeaderText = "ID"
-        Me.Column1.MinimumWidth = 6
-        Me.Column1.Name = "Column1"
-        Me.Column1.ReadOnly = True
-        Me.Column1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        '
-        'Column2
-        '
-        Me.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.Column2.DefaultCellStyle = DataGridViewCellStyle4
-        Me.Column2.FillWeight = 160.0!
-        Me.Column2.HeaderText = "Track type"
-        Me.Column2.MinimumWidth = 6
-        Me.Column2.Name = "Column2"
-        Me.Column2.ReadOnly = True
-        Me.Column2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        '
-        'Column3
-        '
-        Me.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.Column3.DefaultCellStyle = DataGridViewCellStyle5
-        Me.Column3.FillWeight = 160.0!
-        Me.Column3.HeaderText = "Quality"
-        Me.Column3.MinimumWidth = 6
-        Me.Column3.Name = "Column3"
-        Me.Column3.ReadOnly = True
-        Me.Column3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        '
-        'Column4
-        '
-        Me.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.Column4.DefaultCellStyle = DataGridViewCellStyle6
-        Me.Column4.FillWeight = 540.0!
-        Me.Column4.HeaderText = "Codec ID"
-        Me.Column4.MinimumWidth = 6
-        Me.Column4.Name = "Column4"
-        Me.Column4.ReadOnly = True
-        Me.Column4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
+        CType(Me.FileInfo.GetChildAt(0).GetChildAt(0).GetChildAt(3), Telerik.WinControls.UI.GridTableElement).RowHeaderColumnWidth = 51
+        CType(Me.FileInfo.GetChildAt(0).GetChildAt(0).GetChildAt(3), Telerik.WinControls.UI.GridTableElement).Text = ""
         '
         'btnConvertAll
         '
         Me.btnConvertAll.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.btnConvertAll.Location = New System.Drawing.Point(305, 260)
-        Me.btnConvertAll.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnConvertAll.Margin = New System.Windows.Forms.Padding(4)
         Me.btnConvertAll.Name = "btnConvertAll"
         Me.btnConvertAll.Size = New System.Drawing.Size(138, 38)
         Me.btnConvertAll.TabIndex = 21
         Me.btnConvertAll.Text = "Convert All"
-        Me.btnConvertAll.UseVisualStyleBackColor = True
         '
         'BWMain
         '
@@ -184,48 +149,54 @@ Partial Class Form1
         'chkRemoveSrc
         '
         Me.chkRemoveSrc.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.chkRemoveSrc.AutoSize = True
-        Me.chkRemoveSrc.Location = New System.Drawing.Point(15, 495)
-        Me.chkRemoveSrc.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.chkRemoveSrc.Location = New System.Drawing.Point(15, 497)
+        Me.chkRemoveSrc.Margin = New System.Windows.Forms.Padding(4)
         Me.chkRemoveSrc.Name = "chkRemoveSrc"
-        Me.chkRemoveSrc.Size = New System.Drawing.Size(144, 20)
+        Me.chkRemoveSrc.Size = New System.Drawing.Size(114, 18)
         Me.chkRemoveSrc.TabIndex = 28
         Me.chkRemoveSrc.Text = "Remove converted"
-        Me.chkRemoveSrc.UseVisualStyleBackColor = True
         '
         'chkLog
         '
         Me.chkLog.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.chkLog.AutoSize = True
-        Me.chkLog.Location = New System.Drawing.Point(174, 495)
-        Me.chkLog.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.chkLog.Location = New System.Drawing.Point(174, 497)
+        Me.chkLog.Margin = New System.Windows.Forms.Padding(4)
         Me.chkLog.Name = "chkLog"
-        Me.chkLog.Size = New System.Drawing.Size(86, 20)
+        Me.chkLog.Size = New System.Drawing.Size(70, 18)
         Me.chkLog.TabIndex = 30
         Me.chkLog.Text = "Log to file"
-        Me.chkLog.UseVisualStyleBackColor = True
         '
         'chkAudioOnly
         '
         Me.chkAudioOnly.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.chkAudioOnly.AutoSize = True
-        Me.chkAudioOnly.Location = New System.Drawing.Point(174, 462)
-        Me.chkAudioOnly.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.chkAudioOnly.Location = New System.Drawing.Point(174, 464)
+        Me.chkAudioOnly.Margin = New System.Windows.Forms.Padding(4)
         Me.chkAudioOnly.Name = "chkAudioOnly"
-        Me.chkAudioOnly.Size = New System.Drawing.Size(131, 20)
+        Me.chkAudioOnly.Size = New System.Drawing.Size(109, 18)
         Me.chkAudioOnly.TabIndex = 37
         Me.chkAudioOnly.Text = "Only Audio (mp3)"
-        Me.chkAudioOnly.UseVisualStyleBackColor = True
         '
         'cmbQuality
         '
         Me.cmbQuality.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.cmbQuality.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cmbQuality.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.cmbQuality.FormattingEnabled = True
-        Me.cmbQuality.Items.AddRange(New Object() {"Audio Default", "64 Kbps", "128 Kbps", "192 Kbps", "256 Kbps", "384 Kbps", "512 Kbps"})
+        Me.cmbQuality.DropDownAnimationEnabled = True
+        Me.cmbQuality.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList
+        RadListDataItem1.Text = "Audio Default"
+        RadListDataItem2.Text = "64 Kbps"
+        RadListDataItem3.Text = "128 Kbps"
+        RadListDataItem4.Text = "192 Kbps"
+        RadListDataItem5.Text = "256 Kbps"
+        RadListDataItem6.Text = "384 Kbps"
+        RadListDataItem7.Text = "512 Kbps"
+        Me.cmbQuality.Items.Add(RadListDataItem1)
+        Me.cmbQuality.Items.Add(RadListDataItem2)
+        Me.cmbQuality.Items.Add(RadListDataItem3)
+        Me.cmbQuality.Items.Add(RadListDataItem4)
+        Me.cmbQuality.Items.Add(RadListDataItem5)
+        Me.cmbQuality.Items.Add(RadListDataItem6)
+        Me.cmbQuality.Items.Add(RadListDataItem7)
         Me.cmbQuality.Location = New System.Drawing.Point(314, 458)
-        Me.cmbQuality.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.cmbQuality.Margin = New System.Windows.Forms.Padding(4)
         Me.cmbQuality.Name = "cmbQuality"
         Me.cmbQuality.Size = New System.Drawing.Size(139, 24)
         Me.cmbQuality.TabIndex = 38
@@ -235,11 +206,10 @@ Partial Class Form1
         '
         Me.cmbGPU.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.cmbGPU.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cmbGPU.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.cmbGPU.FormattingEnabled = True
+        Me.cmbGPU.DropDownAnimationEnabled = True
+        Me.cmbGPU.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList
         Me.cmbGPU.Location = New System.Drawing.Point(314, 489)
-        Me.cmbGPU.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.cmbGPU.Margin = New System.Windows.Forms.Padding(4)
         Me.cmbGPU.MaximumSize = New System.Drawing.Size(624, 0)
         Me.cmbGPU.Name = "cmbGPU"
         Me.cmbGPU.Size = New System.Drawing.Size(273, 24)
@@ -248,70 +218,54 @@ Partial Class Form1
         'ItemsList
         '
         Me.ItemsList.AllowDrop = True
-        Me.ItemsList.AllowUserToAddRows = False
-        Me.ItemsList.AllowUserToOrderColumns = True
         Me.ItemsList.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.ItemsList.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells
-        DataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle8.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(178, Byte))
-        DataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.ItemsList.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle8
-        Me.ItemsList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.ItemsList.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Address})
-        Me.ItemsList.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
+        Me.ItemsList.BeginEditMode = Telerik.WinControls.RadGridViewBeginEditMode.BeginEditProgrammatically
         Me.ItemsList.Location = New System.Drawing.Point(15, 15)
-        Me.ItemsList.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.ItemsList.Margin = New System.Windows.Forms.Padding(4)
+        '
+        '
+        '
+        Me.ItemsList.MasterTemplate.AllowAddNewRow = False
+        GridViewTextBoxColumn5.FieldName = "Address"
+        GridViewTextBoxColumn5.HeaderText = "File Address"
+        GridViewTextBoxColumn5.MinWidth = 6
+        GridViewTextBoxColumn5.Name = "Address"
+        Me.ItemsList.MasterTemplate.Columns.AddRange(New Telerik.WinControls.UI.GridViewDataColumn() {GridViewTextBoxColumn5})
+        Me.ItemsList.MasterTemplate.ShowRowHeaderColumn = False
+        Me.ItemsList.MasterTemplate.ViewDefinition = TableViewDefinition2
         Me.ItemsList.Name = "ItemsList"
-        Me.ItemsList.RowHeadersVisible = False
-        Me.ItemsList.RowHeadersWidth = 51
-        Me.ItemsList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.ItemsList.Size = New System.Drawing.Size(572, 238)
         Me.ItemsList.TabIndex = 40
-        '
-        'Address
-        '
-        Me.Address.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Address.DataPropertyName = "Address"
-        Me.Address.FillWeight = 273.64!
-        Me.Address.HeaderText = "File Address"
-        Me.Address.MinimumWidth = 6
-        Me.Address.Name = "Address"
-        Me.Address.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
+        CType(Me.ItemsList.GetChildAt(0).GetChildAt(0).GetChildAt(3), Telerik.WinControls.UI.GridTableElement).RowHeaderColumnWidth = 51
+        CType(Me.ItemsList.GetChildAt(0).GetChildAt(0).GetChildAt(3), Telerik.WinControls.UI.GridTableElement).Text = ""
         '
         'chkSubtitle
         '
         Me.chkSubtitle.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.chkSubtitle.AutoSize = True
-        Me.chkSubtitle.Location = New System.Drawing.Point(15, 462)
-        Me.chkSubtitle.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.chkSubtitle.Location = New System.Drawing.Point(15, 464)
+        Me.chkSubtitle.Margin = New System.Windows.Forms.Padding(4)
         Me.chkSubtitle.Name = "chkSubtitle"
-        Me.chkSubtitle.Size = New System.Drawing.Size(149, 20)
+        Me.chkSubtitle.Size = New System.Drawing.Size(124, 18)
         Me.chkSubtitle.TabIndex = 25
         Me.chkSubtitle.Text = "Add default subtitles"
-        Me.chkSubtitle.UseVisualStyleBackColor = True
         '
         'chkKeepType
         '
         Me.chkKeepType.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.chkKeepType.AutoSize = True
-        Me.chkKeepType.Location = New System.Drawing.Point(451, 270)
+        Me.chkKeepType.Location = New System.Drawing.Point(451, 272)
         Me.chkKeepType.Margin = New System.Windows.Forms.Padding(4)
         Me.chkKeepType.Name = "chkKeepType"
-        Me.chkKeepType.Size = New System.Drawing.Size(93, 20)
+        Me.chkKeepType.Size = New System.Drawing.Size(69, 18)
         Me.chkKeepType.TabIndex = 41
         Me.chkKeepType.Text = "KeepType"
-        Me.chkKeepType.UseVisualStyleBackColor = True
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(120.0!, 120.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi
-        Me.ClientSize = New System.Drawing.Size(605, 526)
+        Me.ClientSize = New System.Drawing.Size(612, 533)
         Me.Controls.Add(Me.chkKeepType)
         Me.Controls.Add(Me.ItemsList)
         Me.Controls.Add(Me.cmbGPU)
@@ -324,34 +278,53 @@ Partial Class Form1
         Me.Controls.Add(Me.btnConvert)
         Me.Controls.Add(Me.FileInfo)
         Me.Controls.Add(Me.btnBrowseAdd)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.MinimumSize = New System.Drawing.Size(620, 563)
         Me.Name = "Form1"
+        '
+        '
+        '
+        Me.RootElement.ApplyShapeToControl = True
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "MKV-MP4 Convertor"
+        CType(Me.btnBrowseAdd, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btnConvert, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.FileInfo.MasterTemplate, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.FileInfo, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btnConvertAll, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.chkRemoveSrc, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.chkLog, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.chkAudioOnly, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.cmbQuality, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.cmbGPU, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ItemsList.MasterTemplate, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ItemsList, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.chkSubtitle, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.chkKeepType, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
     Friend WithEvents ofdAdd As OpenFileDialog
-    Friend WithEvents btnBrowseAdd As Button
-    Friend WithEvents btnConvert As Button
-    Friend WithEvents FileInfo As DataGridView
-    Friend WithEvents btnConvertAll As Button
+    Friend WithEvents btnBrowseAdd As Telerik.WinControls.UI.RadButton
+    Friend WithEvents btnConvert As Telerik.WinControls.UI.RadButton
+    Friend WithEvents FileInfo As Telerik.WinControls.UI.RadGridView
+    Friend WithEvents btnConvertAll As Telerik.WinControls.UI.RadButton
     Friend WithEvents BWMain As System.ComponentModel.BackgroundWorker
-    Friend WithEvents chkRemoveSrc As CheckBox
-    Friend WithEvents chkLog As CheckBox
-    Friend WithEvents chkAudioOnly As CheckBox
-    Friend WithEvents cmbQuality As ComboBox
-    Friend WithEvents cmbGPU As ComboBox
-    Friend WithEvents Column1 As DataGridViewTextBoxColumn
-    Friend WithEvents Column2 As DataGridViewTextBoxColumn
-    Friend WithEvents Column3 As DataGridViewTextBoxColumn
-    Friend WithEvents Column4 As DataGridViewTextBoxColumn
-    Friend WithEvents ItemsList As DataGridView
-    Friend WithEvents chkSubtitle As CheckBox
-    Friend WithEvents Address As DataGridViewTextBoxColumn
-    Friend WithEvents chkKeepType As CheckBox
+    Friend WithEvents chkRemoveSrc As Telerik.WinControls.UI.RadCheckBox
+    Friend WithEvents chkLog As Telerik.WinControls.UI.RadCheckBox
+    Friend WithEvents chkAudioOnly As Telerik.WinControls.UI.RadCheckBox
+    Friend WithEvents cmbQuality As Telerik.WinControls.UI.RadDropDownList
+    Friend WithEvents cmbGPU As Telerik.WinControls.UI.RadDropDownList
+    Friend WithEvents Column1 As Telerik.WinControls.UI.GridViewTextBoxColumn
+    Friend WithEvents Column2 As Telerik.WinControls.UI.GridViewTextBoxColumn
+    Friend WithEvents Column3 As Telerik.WinControls.UI.GridViewTextBoxColumn
+    Friend WithEvents Column4 As Telerik.WinControls.UI.GridViewTextBoxColumn
+    Friend WithEvents ItemsList As Telerik.WinControls.UI.RadGridView
+    Friend WithEvents chkSubtitle As Telerik.WinControls.UI.RadCheckBox
+    Friend WithEvents Address As Telerik.WinControls.UI.GridViewTextBoxColumn
+    Friend WithEvents chkKeepType As Telerik.WinControls.UI.RadCheckBox
+    Friend WithEvents FluentDarkTheme As Telerik.WinControls.Themes.FluentDarkTheme
+    Friend WithEvents FluentTheme As Telerik.WinControls.Themes.FluentTheme
 End Class

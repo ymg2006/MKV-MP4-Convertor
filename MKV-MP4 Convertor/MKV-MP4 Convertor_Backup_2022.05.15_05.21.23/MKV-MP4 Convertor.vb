@@ -1,4 +1,4 @@
-Imports System.ComponentModel
+﻿Imports System.ComponentModel
 Imports System.IO
 Imports System.Linq
 Imports System.Management
@@ -10,22 +10,17 @@ Imports System.Threading.Tasks
 Imports Convertor.My.Resources
 Imports MediaInfo
 Imports Microsoft.WindowsAPICodePack.Taskbar
-Imports Telerik.WinControls
-Imports Telerik.WinControls.UI
 
-'TODO Fix datagridView Sizes
-'TODO conver messageboxes to Rad
-'TODO Add Theme selector
 Public Class Form1
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        ThemeResolutionService.ApplicationThemeName = "FluentDark"
         ItemsList.Columns.Add(New DataGridViewProgressColumn())
         Dim dgvType = ItemsList.GetType()
         Dim pi = dgvType.GetProperty("DoubleBuffered", BindingFlags.Instance Or BindingFlags.NonPublic)
         pi.SetValue(ItemsList, True)
         ItemsList.Columns(1).AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
         ItemsList.Columns(1).HeaderText = "Progress"
-        ItemsList.Columns(1).FieldName = "Progress"
+        ItemsList.Columns(1).DataPropertyName = "Progress"
+        ItemsList.Columns(1).DefaultCellStyle = New DataGridViewCellStyle() With {.Alignment = DataGridViewContentAlignment.MiddleCenter}
         ItemsList.Columns(1).ReadOnly = True
 
         Icon = app_icon
@@ -51,12 +46,7 @@ Public Class Form1
         Private _Name As String
         Private _DeviceID As Integer
 
-        Public Sub New(value As String, index As Integer)
-            _Name = value
-            _DeviceID = index
-        End Sub
-
-        Public Property Name As string
+        Public Property Name As String
             Get
                 Return _Name
             End Get
@@ -83,31 +73,14 @@ Public Class Form1
         Private Sub NotifyPropertyChanged(<CallerMemberName()> Optional ByVal propertyName As String = Nothing)
             RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
         End Sub
-
-        Public Shared Narrowing Operator CType(v As RadListDataItem) As GpuInfo
-            Try
-                Dim itemValue As GpuInfo = v.Value
-                Return New GpuInfo(itemValue._Name, itemValue._DeviceID)
-            Catch ex As Exception
-                Return New GpuInfo(v.Text, v.Index)
-            End Try
-        End Operator
-
-        Public Shared Widening Operator CType(v As GpuInfo) As RadListDataItem
-            Return New RadListDataItem(v._Name, v._DeviceID)
-        End Operator
-
-        Public Overrides Function ToString() As String
-            Return _Name
-        End Function
     End Class
 
     Private Function GetGpuList() As BindingList(Of GpuInfo)
         Dim retList = New BindingList(Of GpuInfo)
-        retList.Add(New GpuInfo("No Hardware Acceleration", 0))
+        retList.Add(New GpuInfo() With {.DeviceID = -1, .Name = "No Hardware Acceleration"})
         Using searcher = New ManagementObjectSearcher("select * from Win32_VideoController")
             For Each obj In searcher.Get()
-                retList.Add(New GpuInfo(obj("Name"), Integer.Parse(obj("DeviceID").ToString().Last()) ))
+                retList.Add(New GpuInfo With {.Name = obj("Name"), .DeviceID = Integer.Parse(obj("DeviceID").ToString().Last()) - 1})
             Next
         End Using
         Return retList
@@ -120,7 +93,7 @@ Public Class Form1
         Private _Progress As Integer
         Public MediaInformation As MediaInfoWrapper
 
-        Public Property Address As string
+        Public Property Address As String
             Get
                 Return _Address
             End Get
@@ -205,7 +178,7 @@ Public Class Form1
     End Sub
 
     Private Function FileAlreadyExistsInlist(file As String) As Boolean
-        For Each row As GridViewRowInfo In ItemsList.Rows
+        For Each row As DataGridViewRow In ItemsList.Rows
             If file = row.Cells(0).Value Then
                 Return True
             End If
@@ -220,7 +193,7 @@ Public Class Form1
         If btnConvert.Text = btnConvert_Convert Then
             btnConvert.Text = btnConvert_Stop
 
-            BWMain.RunWorkerAsync(ItemsList.SelectedRows.Cast(Of GridViewDataRowInfo).Select(Function(r) r.Index).ToArray())
+            BWMain.RunWorkerAsync(ItemsList.SelectedRows.Cast(Of DataGridViewRow).Select(Function(r) r.Index).ToArray())
 
         ElseIf btnConvert.Text = btnConvert_Stop Then
             btnConvert.Text = btnConvert_Convert
@@ -441,7 +414,7 @@ Public Class Form1
         TaskbarManager.Instance.SetProgressValue(0, 100)
     End Sub
 
-    Private Sub chkLog_CheckedChanged(sender As Object, e As EventArgs) Handles chkLog.ToggleStateChanged
+    Private Sub chkLog_CheckedChanged(sender As Object, e As EventArgs) Handles chkLog.CheckedChanged
         If Not Directory.Exists("log") Then
             Directory.CreateDirectory("log")
         End If
@@ -449,7 +422,7 @@ Public Class Form1
 
     Private prev_checked3 As Boolean
 
-    Private Sub chkAudioOnly_CheckedChanged(sender As Object, e As EventArgs) Handles chkAudioOnly.ToggleStateChanged
+    Private Sub chkAudioOnly_CheckedChanged(sender As Object, e As EventArgs) Handles chkAudioOnly.CheckedChanged
         If chkAudioOnly.Checked Then
             prev_checked3 = chkSubtitle.Checked
             chkSubtitle.Checked = False
@@ -484,12 +457,12 @@ Public Class Form1
 
     Private Sub ComboBox_GPU_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbGPU.SelectedIndexChanged
         Dim selectedGpu = CType(cmbGPU.SelectedItem, GpuInfo)
-        HWAccelParam = If(selectedGpu.DeviceID = 0, "-y", $"-hwaccel_device {selectedGpu.DeviceID - 1} -y")
+        HWAccelParam = If(selectedGpu.DeviceID = -1, "-y", $"-hwaccel_device {selectedGpu.DeviceID} -y")
     End Sub
 
-    Private Sub ItemsList_CellValidating(sender As Object, e As CellValidatingEventArgs) Handles ItemsList.CellValidating
+    Private Sub ItemsList_CellValidating(sender As Object, e As DataGridViewCellValidatingEventArgs) Handles ItemsList.CellValidating
         If ItemsList.Columns(e.ColumnIndex).HeaderText = "File Address" Then
-            If Not File.Exists(ItemsList.Rows(e.RowIndex).Cells(0).Value) Then
+            If Not File.Exists(ItemsList.Rows(e.RowIndex).Cells(0).EditedFormattedValue) Then
                 MsgBox(ItemsList_files_Does_Not_Exist, , ItemsList__Error)
                 ItemsList.Rows(e.RowIndex).Cells(0).Value = ItemsList.Rows(e.RowIndex).Cells(0).Value
                 e.Cancel = True
@@ -497,7 +470,7 @@ Public Class Form1
         End If
     End Sub
 
-    Private Sub ItemsList_CellEndEdit(sender As Object, e As GridViewCellEventArgs) Handles ItemsList.CellEndEdit
+    Private Sub ItemsList_CellEndEdit(sender As Object, e As DataGridViewCellEventArgs) Handles ItemsList.CellEndEdit
         ItemsList.Rows(e.RowIndex).ErrorText = String.Empty
     End Sub
 
@@ -510,9 +483,9 @@ Public Class Form1
         End If
     End Sub
 
-    Private Sub ItemsList_CellDoubleClick(sender As Object, e As GridViewCellEventArgs) Handles ItemsList.CellDoubleClick
+    Private Sub ItemsList_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles ItemsList.CellDoubleClick
         If e.ColumnIndex = 0 Then
-            ItemsList.CancelEdit()
+            ItemsList.BeginEdit(False)
         End If
     End Sub
 End Class

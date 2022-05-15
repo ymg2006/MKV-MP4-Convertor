@@ -1,15 +1,13 @@
-Imports System.ComponentModel
-Imports Telerik.WinControls.UI
+﻿Imports System.ComponentModel
 
 Public Class DataGridViewProgressColumn
-
-    Inherits GridViewImageColumn
+    Inherits DataGridViewImageColumn
 
     Public Sub New()
+        CellTemplate = New DataGridViewProgressCell
     End Sub
 End Class
 Public Class DataGridViewProgressCell
-
     Inherits DataGridViewImageCell
 
     Dim foreColorBrush = New SolidBrush(Color.Black)
