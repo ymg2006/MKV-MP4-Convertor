@@ -2,6 +2,7 @@
 Imports System.IO
 Imports System.Linq
 Imports System.Management
+Imports System.Reflection
 Imports System.Runtime.CompilerServices
 Imports System.Text
 Imports System.Threading
@@ -13,6 +14,9 @@ Imports Microsoft.WindowsAPICodePack.Taskbar
 Public Class Form1
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ItemsList.Columns.Add(New DataGridViewProgressColumn())
+        Dim dgvType = ItemsList.GetType()
+        Dim pi = dgvType.GetProperty("DoubleBuffered", BindingFlags.Instance Or BindingFlags.NonPublic)
+        pi.SetValue(ItemsList, True)
         ItemsList.Columns(1).AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
         ItemsList.Columns(1).HeaderText = "Progress"
         ItemsList.Columns(1).DataPropertyName = "Progress"
@@ -87,6 +91,7 @@ Public Class Form1
 
         Private _Address As String
         Private _Progress As Integer
+        Public MediaInformation As MediaInfoWrapper
 
         Public Property Address As String
             Get
@@ -96,7 +101,7 @@ Public Class Form1
             Set
                 _Address = Value
                 Try
-                    MediaInfo = New MediaInfoWrapper(Value)
+                    MediaInformation = New MediaInfoWrapper(Value)
                     Dim mi = New MediaInfo.MediaInfo($".\x64")
                     mi.Open(Value)
                     videoFrameCount = Integer.Parse(mi.Get(StreamKind.Video, 0, "FrameCount"))
@@ -212,7 +217,7 @@ Public Class Form1
 
     Private Sub Getinfo(ID As Integer)
         Try
-            Dim aviFile = _Items(ID).MediaInfo
+            Dim aviFile = _Items(ID).MediaInformation
             For i = 0 To aviFile.VideoStreams.Count - 1
                 FileInfo.Rows.Add(aviFile.VideoStreams(i).Id - 1, aviFile.VideoStreams(i).Format,
                                        aviFile.VideoStreams(i).Width & " X " & aviFile.VideoStreams(i).Height, aviFile.VideoStreams(i).Codec.ToString)
@@ -230,6 +235,7 @@ Public Class Form1
 
     Private mp3quality As String
     Private HWAccelParam As String
+    Private RemovableOutputs As List(Of String) = New List(Of String)()
 
     Private x As ProcessStartInfo = New ProcessStartInfo With {
         .FileName = "x64\ffmpeg\ffmpeg.exe",
@@ -247,7 +253,7 @@ Public Class Form1
         Parallel.ForEach(list, pOptions, Sub(i)
                                              Dim Input = _Items(i)
                                              Dim filesrc = Input.Address
-                                             Dim aviFile = Input.MediaInfo
+                                             Dim aviFile = Input.MediaInformation
                                              Dim convtype As String
                                              Dim outputFile As String
 
@@ -263,12 +269,21 @@ Public Class Form1
                                                  Case "ffmpeg"
                                                      Select Case Path.GetExtension(filesrc)
                                                          Case ".mp4"
-                                                             outputFile = Path.ChangeExtension(filesrc, "mkv")
-                                                             builder.Append("-i" & Chr(32) & Chr(34) & filesrc & Chr(34) & Chr(32) & "-codec copy" &
+                                                             If chkKeepType.Checked Then
+                                                                 outputFile = filesrc.Insert(filesrc.LastIndexOf("."), "-" + Path.GetRandomFileName())
+                                                             Else
+                                                                 outputFile = Path.ChangeExtension(filesrc, "mkv")
+                                                             End If
+
+                                                             builder.Append("-i" & Chr(32) & Chr(34) & filesrc & Chr(34) & Chr(32) & "-vcodec copy -c:a libfdk_aac -profile:a aac_he -eld_sbr 1" &
                                                                             Chr(32) & Chr(34) & outputFile & Chr(34) & Chr(32) & HWAccelParam)
                                                          Case ".mkv"
-                                                             outputFile = Path.ChangeExtension(filesrc, "mp4")
-                                                             builder.Append("-i" & Chr(32) & Chr(34) & filesrc & Chr(34) & Chr(32) & "-codec copy" &
+                                                             If chkKeepType.Checked Then
+                                                                 outputFile = filesrc.Insert(filesrc.LastIndexOf("."), "-" + Path.GetRandomFileName())
+                                                             Else
+                                                                 outputFile = Path.ChangeExtension(filesrc, "mp4")
+                                                             End If
+                                                             builder.Append("-i" & Chr(32) & Chr(34) & filesrc & Chr(34) & Chr(32) & "-vcodec copy -c:a libfdk_aac -profile:a aac_he -eld_sbr 1" &
                                                                             Chr(32) & Chr(34) & outputFile & Chr(34) & Chr(32) & HWAccelParam)
                                                          Case Else
                                                              MsgBox(NotSupported)
@@ -284,7 +299,13 @@ Public Class Form1
                                              End Select
 
                                              If File.Exists(outputFile) Then
-                                                 File.Delete(outputFile)
+                                                 Dim result As DialogResult = MessageBox.Show("The output file " + outputFile + " exists, delete it?", "Warning", MessageBoxButtons.YesNo)
+                                                 If result = DialogResult.No Then
+                                                     outputFile = filesrc.Insert(filesrc.LastIndexOf("."), "-" + Path.GetRandomFileName())
+                                                 ElseIf result = DialogResult.Yes Then
+                                                     File.Delete(outputFile)
+                                                 End If
+
                                              End If
 
                                              x.Arguments = builder.ToString
@@ -332,6 +353,7 @@ Public Class Form1
                                                      End While
                                                      If source.IsCancellationRequested Then
                                                          p.Kill()
+                                                         RemovableOutputs.Add(outputFile)
                                                          Exit Sub
                                                      End If
                                                  End While
@@ -341,6 +363,7 @@ Public Class Form1
                                                  If Not ex2.Message.Contains("Object is currently in use elsewhere") Then
                                                      MsgBox(BWMain_DoWork_Error___ + ex2.Message, , "ffmpeg")
                                                      p.Kill()
+                                                     RemovableOutputs.Add(outputFile)
                                                      Exit Sub
                                                  End If
                                              End Try
@@ -369,6 +392,12 @@ Public Class Form1
     Private Sub BWMain_RunWorkerCompleted(sender As Object, e As RunWorkerCompletedEventArgs) Handles BWMain.RunWorkerCompleted
         If source.IsCancellationRequested Then
             MsgBox(BWMain_Stopped)
+            For Each fileToRemove In RemovableOutputs
+                File.Delete(fileToRemove)
+            Next
+            RemovableOutputs.RemoveAll(Function()
+                                           Return True
+                                       End Function)
         Else
             btnConvert.Text = btnConvert_Convert
             btnConvertAll.Text = btnConvertAll_Convert_All

@@ -48,6 +48,7 @@ Partial Class Form1
         Me.ItemsList = New System.Windows.Forms.DataGridView()
         Me.Address = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.chkSubtitle = New System.Windows.Forms.CheckBox()
+        Me.chkKeepType = New System.Windows.Forms.CheckBox()
         CType(Me.FileInfo, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ItemsList, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -59,9 +60,10 @@ Partial Class Form1
         'btnBrowseAdd
         '
         Me.btnBrowseAdd.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.btnBrowseAdd.Location = New System.Drawing.Point(12, 208)
+        Me.btnBrowseAdd.Location = New System.Drawing.Point(15, 260)
+        Me.btnBrowseAdd.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnBrowseAdd.Name = "btnBrowseAdd"
-        Me.btnBrowseAdd.Size = New System.Drawing.Size(110, 30)
+        Me.btnBrowseAdd.Size = New System.Drawing.Size(138, 38)
         Me.btnBrowseAdd.TabIndex = 1
         Me.btnBrowseAdd.Text = "Browse/Add"
         Me.btnBrowseAdd.UseVisualStyleBackColor = True
@@ -69,9 +71,10 @@ Partial Class Form1
         'btnConvert
         '
         Me.btnConvert.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.btnConvert.Location = New System.Drawing.Point(128, 208)
+        Me.btnConvert.Location = New System.Drawing.Point(160, 260)
+        Me.btnConvert.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnConvert.Name = "btnConvert"
-        Me.btnConvert.Size = New System.Drawing.Size(110, 30)
+        Me.btnConvert.Size = New System.Drawing.Size(138, 38)
         Me.btnConvert.TabIndex = 4
         Me.btnConvert.Text = "Convert"
         Me.btnConvert.UseVisualStyleBackColor = True
@@ -103,13 +106,15 @@ Partial Class Form1
         DataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.FileInfo.DefaultCellStyle = DataGridViewCellStyle7
-        Me.FileInfo.Location = New System.Drawing.Point(12, 244)
+        Me.FileInfo.Location = New System.Drawing.Point(15, 305)
+        Me.FileInfo.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.FileInfo.Name = "FileInfo"
         Me.FileInfo.ReadOnly = True
         Me.FileInfo.RowHeadersVisible = False
+        Me.FileInfo.RowHeadersWidth = 51
         Me.FileInfo.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
         Me.FileInfo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.FileInfo.Size = New System.Drawing.Size(458, 115)
+        Me.FileInfo.Size = New System.Drawing.Size(572, 144)
         Me.FileInfo.TabIndex = 5
         '
         'Column1
@@ -119,6 +124,7 @@ Partial Class Form1
         Me.Column1.DefaultCellStyle = DataGridViewCellStyle3
         Me.Column1.FillWeight = 50.0!
         Me.Column1.HeaderText = "ID"
+        Me.Column1.MinimumWidth = 6
         Me.Column1.Name = "Column1"
         Me.Column1.ReadOnly = True
         Me.Column1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
@@ -130,6 +136,7 @@ Partial Class Form1
         Me.Column2.DefaultCellStyle = DataGridViewCellStyle4
         Me.Column2.FillWeight = 160.0!
         Me.Column2.HeaderText = "Track type"
+        Me.Column2.MinimumWidth = 6
         Me.Column2.Name = "Column2"
         Me.Column2.ReadOnly = True
         Me.Column2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
@@ -141,6 +148,7 @@ Partial Class Form1
         Me.Column3.DefaultCellStyle = DataGridViewCellStyle5
         Me.Column3.FillWeight = 160.0!
         Me.Column3.HeaderText = "Quality"
+        Me.Column3.MinimumWidth = 6
         Me.Column3.Name = "Column3"
         Me.Column3.ReadOnly = True
         Me.Column3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
@@ -152,6 +160,7 @@ Partial Class Form1
         Me.Column4.DefaultCellStyle = DataGridViewCellStyle6
         Me.Column4.FillWeight = 540.0!
         Me.Column4.HeaderText = "Codec ID"
+        Me.Column4.MinimumWidth = 6
         Me.Column4.Name = "Column4"
         Me.Column4.ReadOnly = True
         Me.Column4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
@@ -159,9 +168,10 @@ Partial Class Form1
         'btnConvertAll
         '
         Me.btnConvertAll.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.btnConvertAll.Location = New System.Drawing.Point(244, 208)
+        Me.btnConvertAll.Location = New System.Drawing.Point(305, 260)
+        Me.btnConvertAll.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnConvertAll.Name = "btnConvertAll"
-        Me.btnConvertAll.Size = New System.Drawing.Size(110, 30)
+        Me.btnConvertAll.Size = New System.Drawing.Size(138, 38)
         Me.btnConvertAll.TabIndex = 21
         Me.btnConvertAll.Text = "Convert All"
         Me.btnConvertAll.UseVisualStyleBackColor = True
@@ -175,9 +185,10 @@ Partial Class Form1
         '
         Me.chkRemoveSrc.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.chkRemoveSrc.AutoSize = True
-        Me.chkRemoveSrc.Location = New System.Drawing.Point(12, 395)
+        Me.chkRemoveSrc.Location = New System.Drawing.Point(15, 495)
+        Me.chkRemoveSrc.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.chkRemoveSrc.Name = "chkRemoveSrc"
-        Me.chkRemoveSrc.Size = New System.Drawing.Size(117, 17)
+        Me.chkRemoveSrc.Size = New System.Drawing.Size(144, 20)
         Me.chkRemoveSrc.TabIndex = 28
         Me.chkRemoveSrc.Text = "Remove converted"
         Me.chkRemoveSrc.UseVisualStyleBackColor = True
@@ -186,9 +197,10 @@ Partial Class Form1
         '
         Me.chkLog.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.chkLog.AutoSize = True
-        Me.chkLog.Location = New System.Drawing.Point(139, 395)
+        Me.chkLog.Location = New System.Drawing.Point(174, 495)
+        Me.chkLog.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.chkLog.Name = "chkLog"
-        Me.chkLog.Size = New System.Drawing.Size(72, 17)
+        Me.chkLog.Size = New System.Drawing.Size(86, 20)
         Me.chkLog.TabIndex = 30
         Me.chkLog.Text = "Log to file"
         Me.chkLog.UseVisualStyleBackColor = True
@@ -197,9 +209,10 @@ Partial Class Form1
         '
         Me.chkAudioOnly.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.chkAudioOnly.AutoSize = True
-        Me.chkAudioOnly.Location = New System.Drawing.Point(139, 369)
+        Me.chkAudioOnly.Location = New System.Drawing.Point(174, 462)
+        Me.chkAudioOnly.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.chkAudioOnly.Name = "chkAudioOnly"
-        Me.chkAudioOnly.Size = New System.Drawing.Size(106, 17)
+        Me.chkAudioOnly.Size = New System.Drawing.Size(131, 20)
         Me.chkAudioOnly.TabIndex = 37
         Me.chkAudioOnly.Text = "Only Audio (mp3)"
         Me.chkAudioOnly.UseVisualStyleBackColor = True
@@ -211,9 +224,10 @@ Partial Class Form1
         Me.cmbQuality.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.cmbQuality.FormattingEnabled = True
         Me.cmbQuality.Items.AddRange(New Object() {"Audio Default", "64 Kbps", "128 Kbps", "192 Kbps", "256 Kbps", "384 Kbps", "512 Kbps"})
-        Me.cmbQuality.Location = New System.Drawing.Point(251, 366)
+        Me.cmbQuality.Location = New System.Drawing.Point(314, 458)
+        Me.cmbQuality.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cmbQuality.Name = "cmbQuality"
-        Me.cmbQuality.Size = New System.Drawing.Size(112, 21)
+        Me.cmbQuality.Size = New System.Drawing.Size(139, 24)
         Me.cmbQuality.TabIndex = 38
         Me.cmbQuality.Visible = False
         '
@@ -224,10 +238,11 @@ Partial Class Form1
         Me.cmbGPU.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbGPU.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.cmbGPU.FormattingEnabled = True
-        Me.cmbGPU.Location = New System.Drawing.Point(251, 391)
-        Me.cmbGPU.MaximumSize = New System.Drawing.Size(500, 0)
+        Me.cmbGPU.Location = New System.Drawing.Point(314, 489)
+        Me.cmbGPU.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.cmbGPU.MaximumSize = New System.Drawing.Size(624, 0)
         Me.cmbGPU.Name = "cmbGPU"
-        Me.cmbGPU.Size = New System.Drawing.Size(219, 21)
+        Me.cmbGPU.Size = New System.Drawing.Size(273, 24)
         Me.cmbGPU.TabIndex = 39
         '
         'ItemsList
@@ -249,11 +264,13 @@ Partial Class Form1
         Me.ItemsList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.ItemsList.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Address})
         Me.ItemsList.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
-        Me.ItemsList.Location = New System.Drawing.Point(12, 12)
+        Me.ItemsList.Location = New System.Drawing.Point(15, 15)
+        Me.ItemsList.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.ItemsList.Name = "ItemsList"
         Me.ItemsList.RowHeadersVisible = False
+        Me.ItemsList.RowHeadersWidth = 51
         Me.ItemsList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.ItemsList.Size = New System.Drawing.Size(458, 190)
+        Me.ItemsList.Size = New System.Drawing.Size(572, 238)
         Me.ItemsList.TabIndex = 40
         '
         'Address
@@ -262,6 +279,7 @@ Partial Class Form1
         Me.Address.DataPropertyName = "Address"
         Me.Address.FillWeight = 273.64!
         Me.Address.HeaderText = "File Address"
+        Me.Address.MinimumWidth = 6
         Me.Address.Name = "Address"
         Me.Address.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
         '
@@ -269,18 +287,32 @@ Partial Class Form1
         '
         Me.chkSubtitle.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.chkSubtitle.AutoSize = True
-        Me.chkSubtitle.Location = New System.Drawing.Point(12, 369)
+        Me.chkSubtitle.Location = New System.Drawing.Point(15, 462)
+        Me.chkSubtitle.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.chkSubtitle.Name = "chkSubtitle"
-        Me.chkSubtitle.Size = New System.Drawing.Size(121, 17)
+        Me.chkSubtitle.Size = New System.Drawing.Size(149, 20)
         Me.chkSubtitle.TabIndex = 25
         Me.chkSubtitle.Text = "Add default subtitles"
         Me.chkSubtitle.UseVisualStyleBackColor = True
         '
+        'chkKeepType
+        '
+        Me.chkKeepType.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.chkKeepType.AutoSize = True
+        Me.chkKeepType.Location = New System.Drawing.Point(451, 270)
+        Me.chkKeepType.Margin = New System.Windows.Forms.Padding(4)
+        Me.chkKeepType.Name = "chkKeepType"
+        Me.chkKeepType.Size = New System.Drawing.Size(93, 20)
+        Me.chkKeepType.TabIndex = 41
+        Me.chkKeepType.Text = "KeepType"
+        Me.chkKeepType.UseVisualStyleBackColor = True
+        '
         'Form1
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(96.0!, 96.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(120.0!, 120.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi
-        Me.ClientSize = New System.Drawing.Size(484, 421)
+        Me.ClientSize = New System.Drawing.Size(605, 526)
+        Me.Controls.Add(Me.chkKeepType)
         Me.Controls.Add(Me.ItemsList)
         Me.Controls.Add(Me.cmbGPU)
         Me.Controls.Add(Me.cmbQuality)
@@ -292,7 +324,8 @@ Partial Class Form1
         Me.Controls.Add(Me.btnConvert)
         Me.Controls.Add(Me.FileInfo)
         Me.Controls.Add(Me.btnBrowseAdd)
-        Me.MinimumSize = New System.Drawing.Size(500, 460)
+        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.MinimumSize = New System.Drawing.Size(620, 563)
         Me.Name = "Form1"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "MKV-MP4 Convertor"
@@ -320,4 +353,5 @@ Partial Class Form1
     Friend WithEvents ItemsList As DataGridView
     Friend WithEvents chkSubtitle As CheckBox
     Friend WithEvents Address As DataGridViewTextBoxColumn
+    Friend WithEvents chkKeepType As CheckBox
 End Class
