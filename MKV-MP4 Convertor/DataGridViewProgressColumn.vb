@@ -36,9 +36,9 @@ Public Class DataGridViewProgressCell
         If percentage > 0 Then
             g.FillRectangle(New SolidBrush(Color.FromArgb(0, 190, 0)), cellBounds.X + 2, cellBounds.Y + 2, Convert.ToInt32((percentage * cellBounds.Width - 4)), cellBounds.Height - 4)
             If percentage < 0.5 Then
-                g.DrawString(progressVal.ToString() + "%", cellStyle.Font, backColorBrush, cellBounds.X + (cellBounds.Width / 2) - 5, cellBounds.Y + 2)
-            Else
                 g.DrawString(progressVal.ToString() + "%", cellStyle.Font, foreColorBrush, cellBounds.X + (cellBounds.Width / 2) - 5, cellBounds.Y + 2)
+            Else
+                g.DrawString(progressVal.ToString() + "%", cellStyle.Font, backColorBrush, cellBounds.X + (cellBounds.Width / 2) - 5, cellBounds.Y + 2)
             End If
         End If
 
